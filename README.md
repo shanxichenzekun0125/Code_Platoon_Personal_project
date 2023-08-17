@@ -1,2 +1,2 @@
 # Code_Platoon_Personal_project
-1. finished day 1, name database: expense_db; created Expense_app
+1. finished day 1, name database: expense_db; created Expense_app, not trying to use fixture, time set as auto right now.
