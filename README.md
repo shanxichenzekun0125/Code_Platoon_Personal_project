@@ -4,6 +4,7 @@
 3.  create category, build ForeignKey, setup admin for both.
 4. finished day4, need do day5, finished url and views for category and transaction
 5. finished post, put, get. need work on delete and account sign in and out.
+6. finished sign_up and login, need a little bit work on there.
 
 
 
