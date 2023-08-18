@@ -3,7 +3,7 @@ from django.utils import timezone
 from category_app.models import Category
 # Create your models here.
 class Transaction(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
+    category = models.ForeignKey(Category, default=5, on_delete=models.CASCADE, related_name='category')
     money_amount = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     time = models.DateTimeField(default=timezone.now, null=False)
     location = models.CharField(max_length=100, default="Hamptonroad area")
