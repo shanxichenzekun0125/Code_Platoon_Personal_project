@@ -29,8 +29,21 @@ class Log_in(APIView):
         email = request.data.get("email")
         password = request.data.get("password")
         user = authenticate(username=email, password=password)
+   
+        
         if user:
             token, created = Token.objects.get_or_create(user=user)
-            return Response({"token": token.key, "trainer": user.email})
+            return Response(token.key)
         else:
-            return Response("No trainer matching credentials", status=HTTP_404_NOT_FOUND)
+            return Response("Invalid credentials", status=HTTP_404_NOT_FOUND)
+        
+
+
+
+class Log_out(APIView):
+    authentication_classes = [TokenAuthentication]
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request):
+        request.user.auth_token.delete()
+        return Response(status=HTTP_204_NO_CONTENT)
