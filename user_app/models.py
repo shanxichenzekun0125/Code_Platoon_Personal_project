@@ -10,5 +10,14 @@ class User(AbstractUser):
         unique=True,
     )
     
-    USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = [] # Email & Password are required by default.
+    # you can't run admin page with this
+    # USERNAME_FIELD = 'email'
+    # REQUIRED_FIELDS = []
+   
+
+
+
+    # You can run admin page and create superuser properly
+    USERNAME_FIELD = 'username'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = ['email']
