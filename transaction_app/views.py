@@ -28,7 +28,7 @@ class All_transaction(APIView):
 
     def get(self, request):
         transactions = TransactionSerializer(Transaction.objects.order_by('-time'), many=True)
-        return Response({"All Transactions": transactions.data })
+        return Response(transactions.data)
     
 
 class Select_transaction(APIView):
