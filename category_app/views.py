@@ -15,4 +15,4 @@ from rest_framework.response import Response
 class All_category(APIView):
     def get(self, request):
         categories = CategorySerializer(Category.objects.all(), many=True)
-        return Response({"All Categories": categories.data })
+        return Response(categories.data)

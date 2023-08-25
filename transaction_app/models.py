@@ -7,7 +7,7 @@ class Transaction(models.Model):
     money_amount = models.DecimalField(max_digits=10, decimal_places=2, null=False)
     time = models.DateTimeField(default=timezone.now, null=False)
     location = models.CharField(max_length=100, default="Hamptonroad area")
-    note = models.TextField(default="Would you like to put some notes for this transaction")
+    note = models.TextField(default="None")
 
     
     
